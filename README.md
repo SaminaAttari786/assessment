@@ -50,8 +50,7 @@ dstport,protocol,tag
 
 # Output 
 1) Tag Counts
-plaintext
-Copy code
+
 Tag Counts:
 Tag, Count
 sv_P1, 2
