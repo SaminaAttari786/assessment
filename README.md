@@ -1,8 +1,5 @@
 # assessment
 
-
-python illumio.py flow_logs.txt lookup_table.cvs output.csv
-
 # Flow Log Processor
 A Python-based script for processing and analyzing flow logs to generate insights by categorizing entries and aggregating counts based on predefined mappings.
 
@@ -33,3 +30,49 @@ The supported protocol values in the lookup table are limited to tcp, udp, and i
 Only logs in version 2 are supported.
 
 No external libraries like pandas or numpy are used, relying solely on Python's standard libraries for simplicity and portability.
+
+# INPUT
+
+1) Flow Logs (flow_logs.txt)
+plaintext
+2 123456789012 eni-0a1b2c3d 10.0.1.201 198.51.100.2 443 49153 6 25 20000 1620140761 1620140821 ACCEPT OK
+2 123456789012 eni-4d3c2b1a 192.168.1.100 203.0.113.101 23 49154 6 15 12000 1620140761 1620140821 REJECT OK
+...
+2) Lookup Table (lookup_table.cvs)
+dstport,protocol,tag
+25,tcp,sv_P1
+68,udp,sv_P2
+23,tcp,sv_P1
+443,tcp,sv_P2
+110,tcp,email
+993,tcp,email
+143,tcp,email
+
+# Output 
+1) Tag Counts
+plaintext
+Copy code
+Tag Counts:
+Tag, Count
+sv_P1, 2
+sv_P2, 1
+email, 3
+Untagged, 8
+
+
+2)Port/Protocol Combination Counts
+Port, Protocol, Count
+443, tcp, 1
+23, tcp, 1
+25, tcp, 1
+110, tcp, 1
+993, tcp, 1
+143, tcp, 1
+
+# Steps to run
+
+1)  Clone the github.
+2)  Navigate to ṭhe directory
+3)  Run this command in terminal:-
+
+python illumio.py flow_logs.txt lookup_table.cvs output.csv
