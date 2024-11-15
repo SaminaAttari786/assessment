@@ -36,16 +36,24 @@ No external libraries like pandas or numpy are used, relying solely on Python's 
 1) Flow Logs (flow_logs.txt)
 plaintext
 2 123456789012 eni-0a1b2c3d 10.0.1.201 198.51.100.2 443 49153 6 25 20000 1620140761 1620140821 ACCEPT OK
+   
 2 123456789012 eni-4d3c2b1a 192.168.1.100 203.0.113.101 23 49154 6 15 12000 1620140761 1620140821 REJECT OK
 ...
-2) Lookup Table (lookup_table.cvs)
+3) Lookup Table (lookup_table.cvs)
 dstport,protocol,tag
+
 25,tcp,sv_P1
+
 68,udp,sv_P2
+
 23,tcp,sv_P1
+
 443,tcp,sv_P2
+
 110,tcp,email
+
 993,tcp,email
+
 143,tcp,email
 
 # Output 
