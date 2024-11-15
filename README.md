@@ -60,20 +60,32 @@ dstport,protocol,tag
 1) Tag Counts
 
 Tag Counts:
+
 Tag, Count
+
 sv_P1, 2
+
 sv_P2, 1
+
 email, 3
+
 Untagged, 8
 
 
 2)Port/Protocol Combination Counts
+
 Port, Protocol, Count
+
 443, tcp, 1
+
 23, tcp, 1
+
 25, tcp, 1
+
 110, tcp, 1
+
 993, tcp, 1
+
 143, tcp, 1
 
 # Steps to run
